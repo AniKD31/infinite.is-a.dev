@@ -1,0 +1,480 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;600;700&display=swap");
+
+
+@font-face 
+{ 
+font-family: "Allura";  
+src: url("Allura-Regular.ttf")format("woff2"); 
+}
+
+
+* {
+  -webkit-tap-highlight-color: transparent;
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  box-sizing: border-box;
+  margin: 0;
+  background: #101010;
+  overflow-x: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.card {
+  margin-left: 10px;
+  width: 80vw;
+  height: auto;
+  max-width: 450px;
+  display: flex;
+  flex-direction: column;
+  transition: all ease-in-out 0.2s;
+}
+
+.card .top {
+  margin-top: 20px;
+  width: 100%;
+  height: 45%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  margin-bottom: 30px;
+}
+.card .top h1 {
+  margin-top: 20px;
+  font-size: 50px;
+  letter-spacing: 1px;
+  font-weight: 1000;
+  font-family: 'Kanit';
+  animation-name: change;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+}
+
+
+.card .top p {
+  margin-top: 20px;
+  width: 80%;
+  text-align: start;
+  font-size: large;
+
+}
+.card .middle {
+  width: 100%;
+  height: 15%;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin-bottom: 30px;
+}
+.card .middle h1 {
+  font-weight: 1000;
+  font-family: "Kanit";
+  letter-spacing: 1.4px;
+}
+.card .middle .boxes {
+  margin-top: 10px;
+  display: flex;
+  width: 100%;
+  max-width: 300px;
+  justify-content:space-evenly;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+.card .middle .boxes i {
+  font-size: 40px;
+  margin-top: 10px;
+  margin-right: 20px;
+}
+.card .middle .boxes i:hover {
+  transition: ease-in-out 0.5s;
+  color: #c51414;
+}
+.card .bottom {
+  width: 100%;
+  height: 40%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: start;
+  flex-direction: column;
+  margin-bottom: 50px;
+  text-align: start;
+}
+.card .bottom h1 {
+  font-weight: 1000;
+  font-family: "Kanit";
+  letter-spacing: 1.4px;
+}
+
+.card .bottom .boxes {
+  margin-top: 10px;
+  display: flex;
+  width: 100%;
+  max-width: 360px;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  line-break: anywhere;
+  flex-wrap: wrap;
+}
+
+.card .bottom .boxes a {
+  font-size: 50px;
+  display: flex;
+  background: #212225;
+  border-radius: 8px;
+  padding: 3px;
+  justify-content: center;
+  flex-direction: column;
+  transition: all 0.5s;
+  margin-top: 10px;
+  margin-right: 7px;
+}
+
+.card .bottom .boxes-2 {
+  margin-top: 20px;
+  display: flex;
+  width: 100%;
+  max-width: 360px;
+  justify-content:space-evenly;
+  align-items: flex-start;
+  line-break: anywhere;
+  flex-wrap: wrap;
+}
+
+.card .bottom .boxes-2 a {
+  font-size: 50px;
+  display: flex;
+  background: #212225;
+  border-radius: 8px;
+  padding: 3px;
+  margin-top: 10px;
+  margin-right: 7px;
+}
+
+
+.container .img {
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+  flex-direction: row;
+}
+
+
+.container .img img {
+  width: 400px; 
+  height: 400px;
+  scale: 1.0;
+  transition: all 0.2s ease-in-out;
+
+}
+
+.container .img img:hover {
+  scale: 1.03;
+  transition: all 0.2s ease-in-out;
+}
+
+.container .img .line {
+width: 5px; height: 350px; 
+background-color: white; 
+margin-left: 50px; 
+margin-right: 50px; 
+opacity: 80%; 
+border-radius: 10px;
+}
+
+.bottom-footer {
+  height: 20vh;
+  width: 100vw;
+  background-color: #121212;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 10px 0px 10px #0f0f0f;
+}
+
+
+.bottom-footer p {
+  padding: 15px;
+  background-color: #212225;
+  border-radius: 10px;
+}
+
+@media only screen and (max-width:998px) {
+  .container .img img {
+    width: 350;
+    height: 350;
+  }
+}
+
+@media only screen and (max-width:880px) {
+  .container .img {
+    display: none;
+
+  }
+}
+
+
+.card .top h1 {
+  background: linear-gradient(to right, 
+  #d02064 0%, 
+  #d02055 10%, 
+  rgb(233, 55, 70) 20%, 
+  #c4383f 30%, 
+  #db2534 40%, 
+  #b050f0 50%, 
+  #e73ee7 60%, 
+  #ff6996 70%, 
+  #ff698f 80%, 
+  #ff4b63 90%, 
+  #d02064 100%) 0 0/200% 100%;;
+  animation: ass 5s linear infinite;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+}
+
+@keyframes ass {
+  to {background-position: 200% 0}
+}
+
+
+.dstat {
+  width: 100%;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.dstat .stcard {
+  margin-top: 10px;
+  height: 100%;
+  width: 90%;
+  max-width: 450px;
+  border-radius: 15px 15px 15px 15px;
+  background-color: #202024;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: row;
+}
+
+.dstat .stcard .stleft {
+  width: 15%;
+  height: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+  max-width: 50px;
+}
+
+.dstat .stcard .stleft img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  padding: 4px;
+}
+
+.dstat .stcard .stmiddle {
+  width: 0.5%;
+  height: 30%;
+  background-color: white;
+  border-radius: 10px;
+  flex-shrink: 0;
+}
+
+.dstat .stcard .stright {
+  width: 84.5%;
+  height: 90%;
+  display: flex;
+  justify-self: flex-start;
+  align-items: center;
+  flex-direction: row;
+  margin-left: 10px;
+  min-width: 0;
+  overflow: hidden;
+}
+.ststatus {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  flex-direction: column;
+  width: 100%;
+}
+
+.stup {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 50%;
+  margin-left: 10px;
+}
+.stup h1 {
+  font-size: 100%;
+}
+
+
+.stdown {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 50%;
+  width: 90%;
+}
+
+.stdown .marquee-text {
+  margin-left: 8px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 100%;
+  width: 50%;
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+
+}
+
+.stdown .time {
+  margin-top: 1.5px;
+  font-size: 70%;
+  margin-right: 0px;
+}
+
+.stdown .duration {
+  margin-top: 1.5px;
+  font-size: 70%;
+  margin-right: 0px;
+}
+
+.stdown .marquee {
+  font-size: 70%;
+  font-weight: 500;
+  margin-top: 1.5px;
+  display: inline-block;
+  padding-left: 100%;
+  animation: marquee 10s linear infinite;
+
+}
+
+.momentum {
+  margin-bottom: 100px;
+  --uib-size: 60px;
+  --uib-speed: 1s;
+  --uib-color: rgb(221, 255, 242);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: var(--uib-size);
+  width: var(--uib-size);
+  animation: rotate01561 var(--uib-speed) linear infinite;
+  top: -20px;
+ }
+ 
+ .momentum::before,
+ .momentum::after {
+  content: '';
+  height: 25%;
+  width: 25%;
+  border-radius: 50%;
+  background-color: var(--uib-color);
+ }
+ 
+ .momentum::before {
+  animation: wobble290123 calc(var(--uib-speed) * 1.25) ease-in-out infinite;
+ }
+ 
+ .momentum::after {
+  animation: wobble9123 calc(var(--uib-speed) * 1.25) ease-in-out infinite;
+ }
+ 
+ .momentum::before {
+  margin-right: 10%;
+ }
+ 
+ @keyframes wobble9123 {
+  0%,
+   100% {
+   transform: translateX(0);
+  }
+ 
+  50% {
+   transform: translateX(calc(var(--uib-size) * 0.2)) scale(1.1);
+  }
+ }
+ 
+ @keyframes wobble290123 {
+  0%,
+   100% {
+   transform: translateX(0);
+  }
+ 
+  50% {
+   transform: translateX(calc(var(--uib-size) * -0.2)) scale(1.1);
+  }
+ }
+ 
+ @keyframes rotate01561 {
+  0% {
+   transform: rotate(0deg);
+  }
+ 
+  100% {
+   transform: rotate(360deg);
+  }
+ }
+
+
+
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.stdown i {
+  margin-left: 10px;
+  margin-top: 2.5px;
+  font-size: 70%;
+}
+
+.stpresence {
+  width: 20%;
+  height: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 50px;
+}
+
+.stpresence img {
+  width: 45px;
+  height: 45px;
+  border-radius: 20%;
+}
