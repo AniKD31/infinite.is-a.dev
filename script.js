@@ -15,7 +15,7 @@
 
     async function fetchPresence() {
         try {
-            const response = await fetch("https://grabe-e701e7ba4aaa.herokuapp.com/infinite");
+            const response = await fetch("https://grabe.infiinitee.me/infinite");
             if (!response.ok) throw new Error("Network response was not ok");
             const data = await response.json();
             return data
@@ -171,6 +171,7 @@
         }, 1500)
     }
     create();
+
 
 
      
