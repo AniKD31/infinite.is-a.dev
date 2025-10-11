@@ -266,6 +266,10 @@ border-radius: 10px;
   display: flex;
   justify-content: center;
   align-items: flex-start;
+  background-color: transparent;
+  position: sticky;
+  z-index: 100;
+  top: 0;
 }
 
 .dstat .stcard {
@@ -273,13 +277,27 @@ border-radius: 10px;
   height: 100%;
   width: 90%;
   max-width: 450px;
+  /*
   border-radius: 15px 15px 15px 15px;
   background-color: #202024;
+  */
   display: flex;
   justify-content: flex-start;
   align-items: center;
   flex-direction: row;
 }
+
+.stcard {
+  -webkit-backdrop-filter: url(#liquid-glass-distortion);
+  backdrop-filter: url(#liquid-glass-distortion);
+
+  /* --- The Glass Look --- */
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
 
 .dstat .stcard .stleft {
   width: 15%;
