@@ -40,7 +40,7 @@ body {
 
 .card {
   margin-left: 10px;
-  width: 80vw;
+  width: 85vw;
   height: auto;
   max-width: 450px;
   display: flex;
@@ -551,4 +551,5 @@ body {
   border-radius: 20%;
   object-fit: cover;
 }
+
 
