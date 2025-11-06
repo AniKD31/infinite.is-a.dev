@@ -10,6 +10,7 @@ const app = TubesCursor(document.getElementById('canvas'), {
   }
 })
 
+
 document.body.addEventListener('click', () => {
   const colors = randomColors(3)
   const lightsColors = randomColors(4)

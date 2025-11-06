@@ -50,9 +50,10 @@
         stleft.appendChild(img);   
 
         if (data.status == "Offline") {
+            const delta = data.delta
             const p = document.createElement("p");
             p.className = "marquee"
-            p.textContent = "Offline";
+            p.textContent = `Offline | Last seen ${delta}`;
             const stpresence = document.querySelector(".stpresence");
             stpresence.style.display = "none";
             mar.appendChild(p);
