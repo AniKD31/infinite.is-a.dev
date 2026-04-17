@@ -176,20 +176,44 @@
 const bgMusic = document.getElementById('bg-music');
 const muteBtn = document.getElementById('mute-btn');
 const muteIcon = muteBtn.querySelector('i');
+const volumeSlider = document.getElementById('volume-slider');
+const volumeText = document.getElementById('volume-text');
 
 bgMusic.volume = 0.5;
 
-muteBtn.addEventListener('click', () => {
-    if (bgMusic.muted || bgMusic.paused) {
-        bgMusic.muted = false;
-        bgMusic.play();
-        muteIcon.className = 'fa-solid fa-volume-high';
-    } else {
-        bgMusic.muted = true;
+const updateVolumeIcon = () => {
+    if (bgMusic.muted || bgMusic.volume === 0) {
         muteIcon.className = 'fa-solid fa-volume-xmark';
+    } else if (bgMusic.volume < 0.5) {
+        muteIcon.className = 'fa-solid fa-volume-low';
+    } else {
+        muteIcon.className = 'fa-solid fa-volume-high';
     }
+};
+
+const startAudio = () => {
+    bgMusic.play().then(() => {
+        updateVolumeIcon();
+        document.removeEventListener('click', startAudio);
+    }).catch(() => {
+        muteIcon.className = 'fa-solid fa-volume-xmark';
+    });
+};
+
+document.addEventListener('click', startAudio, { once: true });
+
+muteBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    bgMusic.muted = !bgMusic.muted;
+    updateVolumeIcon();
 });
 
-     
+volumeSlider.addEventListener('input', (e) => {
+    const val = e.target.value;
+    bgMusic.volume = val / 100;
+    volumeText.textContent = `${val}%`;
+    if (val > 0) bgMusic.muted = false;
+    updateVolumeIcon();
+});
 
 
