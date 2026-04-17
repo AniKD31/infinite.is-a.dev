@@ -173,7 +173,22 @@
     }
     create();
 
+const bgMusic = document.getElementById('bg-music');
+const muteBtn = document.getElementById('mute-btn');
+const muteIcon = muteBtn.querySelector('i');
 
+bgMusic.volume = 0.5;
+
+muteBtn.addEventListener('click', () => {
+    if (bgMusic.muted || bgMusic.paused) {
+        bgMusic.muted = false;
+        bgMusic.play();
+        muteIcon.className = 'fa-solid fa-volume-high';
+    } else {
+        bgMusic.muted = true;
+        muteIcon.className = 'fa-solid fa-volume-xmark';
+    }
+});
 
      
 
