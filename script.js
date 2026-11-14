@@ -1,4 +1,4 @@
-import { background, estuary } from "asciify-engine/kit";
+import { background, estuary, wordmark } from "asciify-engine/kit";
 
 const hero = document.querySelector("#hero");
 const bg = hero ? background(hero, {
@@ -8,6 +8,24 @@ const bg = hero ? background(hero, {
     cursor: "lantern",
 }) : null;
 
+const footerMarkEl = document.querySelector("#footer-wordmark");
+let footerMark = null;
+if (footerMarkEl) {
+    try {
+        footerMark = wordmark(footerMarkEl, {
+            text: "IИFINITE",
+            assemble: "scroll",
+            look: { hover: "trail" }
+        });
+        if (footerMark && footerMark.supported !== false) {
+            const fallback = footerMarkEl.querySelector(".ascii-fallback");
+            if (fallback) fallback.style.display = "none";
+        }
+    } catch (err) {
+        console.warn("Using static ASCII banner fallback for footer wordmark:", err);
+    }
+}
+
 window.addEventListener("pointerdown", (e) => {
     if (e.button !== 0 || !bg?.field) return;
     bg.field.pulse({ x: e.clientX, y: e.clientY });
@@ -15,6 +33,7 @@ window.addEventListener("pointerdown", (e) => {
 
 window.addEventListener("pagehide", () => {
     bg?.destroy();
+    footerMark?.destroy?.();
 }, { once: true });
 
 async function fixlink(link) {
@@ -66,13 +85,13 @@ async function create() {
     const img = document.createElement("img");
     img.src = data.avatar;
     if (data.status == "Online") {
-        img.style.border = "2px solid #37a65c";
+        img.style.border = "2px solid #d8d6cf";
     } else if (data.status == "Offline") {
-        img.style.border = "2px solid #545554";
+        img.style.border = "2px solid #54534e";
     } else if (data.status == "Idle") {
-        img.style.border = "2px solid #ecb03f";
+        img.style.border = "2px solid #9a9890";
     } else if (data.status == "Dnd") {
-        img.style.border = "2px solid #f7595a";
+        img.style.border = "2px solid #78766f";
     }
     stleft.appendChild(img);   
 
@@ -128,7 +147,7 @@ async function create() {
                 stdown.appendChild(time);
                 time.style.fontWeight = "500";
                 time.style.marginLeft = "5px";
-                time.style.width = "23px";
+                time.style.width = "28px";
                 time.textContent = "0:00";
                 const duration = document.createElement("p");
                 duration.className = "duration";
